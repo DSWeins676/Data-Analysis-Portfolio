@@ -1,5 +1,3 @@
-This repository is a place to discuss my interests in business and data analysis in support of business process optimizations and strategic IT modernizations/improvements, as well as showcase projects I've worked on to demonstrate my proficiency with tools supporting data processing, management, analysis, and interpretation.
-
 ## Projects
 
 <a href="https://github.com/DSWeins676/NYVehicleRegistrations"> 1. Income Driven: Exploring Relationships Between Vehicles and Household Income in New York State </a>
