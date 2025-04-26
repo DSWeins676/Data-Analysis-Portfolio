@@ -16,7 +16,7 @@ Although I did not find a linear correlation between these two measures in the m
 
 Although such things are only speculative, viewing the counties side-by-side on a map invites us to explore the social, economic, and geographic differences between New York's counties that lead to these differences and distinctions
 
-Click the image to view the live dashboard!
+***Click the image to view the live dashboard on Tableau Public***
 
 [![Dashboard Preview](Images/IncomeDrivenViz.png)](https://public.tableau.com/views/IncomeDrivenExploringRelationshipsBetweenVehiclesandHouseholdIncomeinNewYorkState/Sheet1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
