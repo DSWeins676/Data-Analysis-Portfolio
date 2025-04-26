@@ -18,6 +18,6 @@ Although such things are only speculative, viewing the counties side-by-side on 
 
 Click the image to view the live dashboard!
 
-[![Dashboard Preview](D:\NYRegistrations\IncomeDrivenViz.png)](https://public.tableau.com/views/IncomeDrivenExploringRelationshipsBetweenVehiclesandHouseholdIncomeinNewYorkState/Sheet1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[![Dashboard Preview](Images/IncomeDrivenViz.png)](https://public.tableau.com/views/IncomeDrivenExploringRelationshipsBetweenVehiclesandHouseholdIncomeinNewYorkState/Sheet1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 
