@@ -14,4 +14,4 @@ This dashboard was created using the "reg_pers" dataframe from my other project 
 
 ***Click the image to view the live dashboard on Tableau Public***
 
-[![Dashboard Preview](Images/IncomeDrivenViz.png)](https://public.tableau.com/views/NYRegistrationScofflaws/NYRegistrationScoffsSuspensions?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[![Dashboard Preview](Images/Registration_Scoff_Viz.png)](https://public.tableau.com/views/NYRegistrationScofflaws/NYRegistrationScoffsSuspensions?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
