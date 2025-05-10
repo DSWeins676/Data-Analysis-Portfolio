@@ -16,14 +16,14 @@ This dashboard was created using the "reg_pers" dataframe from my other project 
 
 All manipulation beyond the creation of the reg_pers .csv was performed in Tableau. Some key points of this methodology include:
 
-**Exclude revocations**
+### **Exclude revocations**
 
 To avoid the ambiguity of a revoked registration (for example, does a registration marked with both a suspension and revocation still count as a suspension?), records with Revocation Indicator = "Y" were filtered at the contextual level in Tableau. As there were only 48 such records in the reg_pers dataset, this should have minimal impacts on the results.
 
 &nbsp;
 &nbsp;
    
-**New York State Choropleth Map**
+### **New York State Choropleth Map**
 
 This map shows the percentage, of all registration, that contain a suspension, a scofflaw, or both. I created the calculated fields "Scofflaw_IndNum," "Susp_IndNum" in the data source to convert the original suspension/scofflaw indicators, which contained "Y" or "N" to "1" or "0," respectively. To avoid double-counting those registrations containing both,I created a new calculated field "Both_SuspScoff_IndNum" to indicate those registrations that contained both (Susp_IndNum + Scofflaw_IndNum = 1 + 1 = 2, in which case Both_SuspScoff_IndNum = 1, else 0). The coloring on the map was determined by the formula below:
 
@@ -36,7 +36,7 @@ The scale for the map's colors has been fixed on both ends, encompassing the low
 &nbsp;
 &nbsp;
 
-**Composition Breakdown of Registrations Bar Chart**
+### **Composition Breakdown of Registrations Bar Chart**
 
 I created a bar chart to display the number of registrations, represented by COUNTD[VIN], that contained a scofflaw, a suspension, both, or neither (a clear registration). To do this, I created the following calculated field named "SuspScoff Category":
 
@@ -53,7 +53,7 @@ Because there were substantially more clear registrations, I excluded this from 
 &nbsp;
 &nbsp;
 
-**Suspensions/Scofflaws by Vehicle Make**
+### **Suspensions/Scofflaws by Vehicle Make**
 
 I also included a table displaying the number of registrations with a scofflaw and/or suspension compared to the total by vehicle make. As there were over 2,000 unique values in the "Make" column, some of which include duplicates with minor spelling differences (i.e. TOYOTA versus TOYOT), only the top 40 makes, by COUNTD[VIN], were included in the table. Further, I added a filter for COUNTD[VIN] >= 100 to try to account for distortions that could occur when calculating percentages due to very small sample sizes. This was an important feature for if a user chooses to filter the dashboard by a single county, where there could sometimes be less than 10 of one of the Top 40 makes in New York, three of which had a suspension, giving an inflated, albeit technically accurate, 30% scoff/suspension rate for that vehicle make in that county.
 
@@ -62,7 +62,7 @@ A complete table of all makes can be found in the Tableau public workbook, but i
 &nbsp;
 &nbsp;
 
-**Filter by County**
+### **Filter by County**
 
 Finally, the dashboard allows the user to view data for New York state (all counties), one particular county, or any combination of any number of counties. All worksheets comprising the dashboard have this county filter applied, and so will simultaneously update with the user's choice. 
 
