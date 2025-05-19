@@ -50,7 +50,7 @@ Using a series of SQL queries to the FARS_Crashes database, I analyzed trends ab
 
 [Calculate non-motorist fatalities by state and road type](https://github.com/DSWeins676/Data-Analysis-Portfolio/blob/main/FARS_Crashes/Queries/Fatalities_by_State.sql)
 
-| State                | Urban_Fatalities | Percent_Urban | Rural_Fatalities | Percent_Rural | Unknown_Fatalities | Percent_Unknown | Total_Pedestrian_Fatalities |
+| State                | Urban_Fatalities | Percent_Urban | Rural_Fatalities | Percent_Rural | Unknown_Fatalities | Percent_Unknown | Total_Nonmotorist_Fatalities |
 | -------------------- | ---------------- | ------------- | ---------------- | ------------- | ------------------ | --------------- | --------------------------- |
 | ALABAMA              | 78               | 57.78         | 54               | 40            | 3                  | 2.22            | 135                         |
 | ALASKA               | 7                | 58.33         | 5                | 41.67         | 0                  | 0               | 12                          |
