@@ -48,7 +48,7 @@ For a summary of the tables, their fields, and the relationships between tables,
 
 Using a series of SQL queries to the FARS_Crashes database, I analyzed trends about non-motorist fatalities as well as the drivers involved in such incidents. This includes the following, each linking to the corresponding SQL query. Below each is the result table from executing that query.
 
-[Calculate non-motorist fatalities by state and road type](https://github.com/Data-Analysis-Portfolio/blob/main/FARS_Crashes/Queries/Fatalities_by_State.sql)
+[Calculate non-motorist fatalities by state and road type](https://github.com/DSWeins676/Data-Analysis-Portfolio/blob/main/FARS_Crashes/Queries/Fatalities_by_State.sql)
 
 | State                | Urban_Fatalities | Percent_Urban | Rural_Fatalities | Percent_Rural | Unknown_Fatalities | Percent_Unknown | Total_Pedestrian_Fatalities |
 | -------------------- | ---------------- | ------------- | ---------------- | ------------- | ------------------ | --------------- | --------------------------- |
