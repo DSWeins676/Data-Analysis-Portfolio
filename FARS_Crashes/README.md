@@ -33,22 +33,22 @@ As for database design, I created unique ID columns for the crashes, vehicles, a
 
 See the following SQL code used to create the FARS_Crashes schema and tables, as well as to upload the data:
 
-[Create FARS_Crashes Schema and Tabkes](https://github.com/DSWeins676/RPAD676Final/blob/main/FARS_Crashes/Queries/Create_Tables.sql)
+[Create FARS_Crashes Schema and Tabkes](https://github.com/DSWeins676/Data-Analysis-Portfolio/blob/main/FARS_Crashes/Queries/Create_Tables.sql)
 
-[Load Data from csv into Tables](https://github.com/DSWeins676/RPAD676Final/blob/main/FARS_Crashes/Queries/Load_Data.sql)
+[Load Data from csv into Tables](https://github.com/DSWeins676/Data-Analysis-Portfolio/blob/main/FARS_Crashes/Queries/Load_Data.sql)
 
 &nbsp;
 &nbsp;
 
 For a summary of the tables, their fields, and the relationships between tables, see the following Entity Relationship Diagram:
 
-![ER Diagram](https://github.com/DSWeins676/RPAD676Final/blob/main/FARS_Crashes/ER_Diagram/FARS_Crashes%20Entity%20Relationship%20Diagram.jpg)
+![ER Diagram](https://github.com/DSWeins676/Data-Analysis-Portfolio/blob/main/FARS_Crashes/ER_Diagram/FARS_Crashes%20Entity%20Relationship%20Diagram.jpg)
 
 ## Methods
 
 Using a series of SQL queries to the FARS_Crashes database, I analyzed trends about non-motorist fatalities as well as the drivers involved in such incidents. This includes the following, each linking to the corresponding SQL query. Below each is the result table from executing that query.
 
-[Calculate non-motorist fatalities by state and road type](https://github.com/DSWeins676/RPAD676Final/blob/main/FARS_Crashes/Queries/Fatalities_by_State.sql)
+[Calculate non-motorist fatalities by state and road type](https://github.com/Data-Analysis-Portfolio/blob/main/FARS_Crashes/Queries/Fatalities_by_State.sql)
 
 | State                | Urban_Fatalities | Percent_Urban | Rural_Fatalities | Percent_Rural | Unknown_Fatalities | Percent_Unknown | Total_Pedestrian_Fatalities |
 | -------------------- | ---------------- | ------------- | ---------------- | ------------- | ------------------ | --------------- | --------------------------- |
@@ -105,7 +105,7 @@ Using a series of SQL queries to the FARS_Crashes database, I analyzed trends ab
 | WYOMING              | 6                | 46.15         | 7                | 53.85         | 0                  | 0               | 13                          |
 
 
-[Count of fatal non-motorist crashes by month and time of day](https://github.com/DSWeins676/RPAD676Final/blob/main/FARS_Crashes/Queries/Fatality_Times.sql)
+[Count of fatal non-motorist crashes by month and time of day](https://github.com/DSWeins676/Data-Analysis-Portfolio/blob/main/FARS_Crashes/Queries/Fatality_Times.sql)
 
 | crash_month | time_of_day | total_nonmotor_fatalities |
 | ----------- | ----------- | ------------------------- |
@@ -134,7 +134,7 @@ Using a series of SQL queries to the FARS_Crashes database, I analyzed trends ab
 | 2023-12     | Daytime     | 352                       |
 | 2023-12     | Nighttime   | 499                       |
 
-[Count of drivers involved in crashes where a non-motorist was killed by, by age and sex](https://github.com/DSWeins676/RPAD676Final/blob/main/FARS_Crashes/Queries/Driver_Age_Sex.sql)
+[Count of drivers involved in crashes where a non-motorist was killed by, by age and sex](https://github.com/DSWeins676/Data-Analysis-Portfolio/blob/main/FARS_Crashes/Queries/Driver_Age_Sex.sql)
 
 
 | age_group | sex    | total_people | total_per_age_group |
