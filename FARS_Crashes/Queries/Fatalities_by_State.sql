@@ -40,8 +40,7 @@ SELECT
     ) AS Percent_Unknown,
 
     -- Total non-motorist fatalities
-    COUNT(*) AS Total_Pedestrian_Fatalities
-
+    COUNT(*) AS Total_Nonmotorist_Fatalities
 FROM 
     people p
     INNER JOIN crashes c ON p.st_case = c.st_case
