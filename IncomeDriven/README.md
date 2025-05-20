@@ -14,4 +14,8 @@ Each row represents a unique registration, indicating the type of record (vehicl
 
 The other main source of information was the 2023 American Community Survey 5-Year Estimates from the United States Census Bureau. Total Population was taken from Table S0101 - Age and Sex - and median household income was taken from Table S1903 - Median Income in the Past 12 Months (in 2023 Inflation-Adjusted Dollars). These were accessed via queries at https://data.census.gov, filtering by all counties in New York State. Due to significant formatting issues when downloading .csv files from this website, plus the small size of the dataset, this data was mostly merged, cleaned, and prepared in Excel.
 
+## Analyses
+
+[Choropeth Map of Median Income and Vehicles per Capita](https://github.com/DSWeins676/Data-Analysis-Portfolio/blob/main/IncomeDriven/Choropeth_Map_Viz.md)
+
 
