@@ -16,6 +16,10 @@ The other main source of information was the 2023 American Community Survey 5-Ye
 
 ## Analyses
 
+My primary analysis was conducted in Python, examining potential relationships between median household income and a variety of data points captured in the Vehicle, Snowmobile, and Boat Registrations dataset. Based on my findings between median household income and vehicles per capita in various counties, I wanted to visualize the results on a map instead of a scatter plot. For this, I created chorpeth maps of both variables to examine geographic, rather than linear, trends.
+
+[
+
 [Choropeth Map of Median Income and Vehicles per Capita](https://github.com/DSWeins676/Data-Analysis-Portfolio/blob/main/IncomeDriven/Choropeth_Map_Viz.md)
 
 
