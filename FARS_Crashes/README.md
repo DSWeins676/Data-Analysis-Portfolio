@@ -174,6 +174,9 @@ Using a series of SQL queries to the FARS_Crashes database, I analyzed trends ab
 | Unknown   | Female | 15           | 61                  |
 | Unknown   | Male   | 46           | 61                  |
 
+These results are shown in a population graph, along with the percent of total drivers for each age group/gender cluster, below:
+
+![Age Gender Graph](https://github.com/DSWeins676/Data-Analysis-Portfolio/blob/main/FARS_Crashes/Images/Age%20and%20Gender%20Population%20Graph%20Numbers%20and%20Percent%20Total.png?raw=true)
 ## Analysis
 
 Significant trends emerge based on this analysis. In 2023, there were over twice as many non-motorists killed during nighttime hours (6,058) as during daytime hours (2,700). I also found that men were more frequently the drivers involved in such fatalities (5,873 male drivers compared to 2,318 female drivers). These analyses, and analyses in a similar vein, can help organizations target efforts and resources to minimize traffic fatality risks, either through systemic or infrastructural changes (i.e. installing additional lighting at high-risk intersections or promoting awareness of the value of reflective clothing or lights when travelling in the evening or night) or through targeted outreach campaigns (i.e. targeting young men with the highest risk of driving recklessly for awareness campaigns). 
