@@ -3,9 +3,9 @@ import pandas as pd
 import json
 
 
-url = "https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items"
+location_url = "https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items"
 
-params = {
+location_params = {
     "f": "json",
     "limit": 1000,
     "state_code": "36",
@@ -14,12 +14,12 @@ params = {
     "properties": "id,monitoring_location_name,agency_code,agency_name,site_type,state_name,county_name,hydrologic_unit_code",
 }
 
-response = requests.get(url, params=params)
-response.raise_for_status()
+location_response = requests.get(location_url, params=location_params)
+location_response.raise_for_status()
 
-data=response.json()
+location_data=location_response.json()
 
-selected_columns = [
+selected_location_columns = [
     "id",
     "monitoring_location_name",
     "agency_code",
@@ -30,23 +30,66 @@ selected_columns = [
     "hydrologic_unit_code"
 ]
 
-records = []
+location_records = []
 
-for feature in data["features"]:
+for feature in location_data["features"]:
     props = feature["properties"]
     geo = feature["geometry"]
 
     row = {}
     
-    for column in selected_columns:
+    for column in selected_location_columns:
         row[column] = props.get(column)
     row["latitude"] = geo["coordinates"][1]
     row["longitude"] = geo["coordinates"][0]
 
-    records.append(row)
+    location_records.append(row)
 
 
-df = pd.DataFrame(records)
+location_df = pd.DataFrame(location_records)
 
-print(df.head())
-print(len(df))
+site_id = "USGS-01359135"
+#location_df.loc[20, "id"]
+
+streamflow_url = "https://api.waterdata.usgs.gov/ogcapi/v0/collections/daily/items"
+
+streamflow_params = {
+    "f": "json",
+    "time": "2025-06-01/2025-06-30",
+    "monitoring_location_id" : site_id,
+    "parameter_code" : "00060",
+}
+
+streamflow_response = requests.get(streamflow_url, params=streamflow_params)
+streamflow_response.raise_for_status()
+
+streamflow_data = streamflow_response.json()
+
+selected_streamflow_columns = [
+    "monitoring_location_id",
+    "time",
+    "parameter_code",
+    "parameter_name",
+    "value",
+    "unit_of_measure",
+    "statistic_id",
+    "approval_status"
+]
+
+streamflow_records = []
+
+for feature in streamflow_data["features"]:
+    props = feature["properties"]
+
+    row = {}
+
+    for column in selected_streamflow_columns:
+        row[column] = props.get(column)
+
+    streamflow_records.append(row)
+
+streamflow_df = pd.DataFrame(streamflow_records)
+pd.to_datetime(streamflow_df['time'])
+streamflow_df.sort_values(by=['time'], inplace= True)
+
+print(streamflow_df.head())
