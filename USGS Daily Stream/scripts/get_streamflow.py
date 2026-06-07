@@ -32,6 +32,8 @@ selected_location_columns = [
 
 location_records = []
 
+## Goes the the nesting level necessary to get properties and geometry and writes to list
+
 for feature in location_data["features"]:
     props = feature["properties"]
     geo = feature["geometry"]
@@ -47,16 +49,18 @@ for feature in location_data["features"]:
 
 
 location_df = pd.DataFrame(location_records)
+print(len(location_df))
 
-site_id = "USGS-01359135"
-#location_df.loc[20, "id"]
+site_ids = location_df["id"].tolist()
+site_ids_param = ",".join(site_ids)
 
 streamflow_url = "https://api.waterdata.usgs.gov/ogcapi/v0/collections/daily/items"
 
 streamflow_params = {
     "f": "json",
-    "time": "2025-06-01/2025-06-30",
-    "monitoring_location_id" : site_id,
+    "limit" : 1000,
+    "time": "2024-01-01/2024-12-31",
+    "monitoring_location_id" : site_ids_param,
     "parameter_code" : "00060",
 }
 
@@ -78,6 +82,8 @@ selected_streamflow_columns = [
 
 streamflow_records = []
 
+## Goes the the nesting level necessary to get properties and geometry and writes to list
+
 for feature in streamflow_data["features"]:
     props = feature["properties"]
 
@@ -90,6 +96,39 @@ for feature in streamflow_data["features"]:
 
 streamflow_df = pd.DataFrame(streamflow_records)
 pd.to_datetime(streamflow_df['time'])
-streamflow_df.sort_values(by=['time'], inplace= True)
+streamflow_df.sort_values(by=['monitoring_location_id','time'], inplace= True)
 
-print(streamflow_df.head())
+# Sites we asked the API for
+requested_site_ids = set(location_df["id"])
+
+# Sites that actually came back in the streamflow data
+if streamflow_df.empty:
+    returned_site_ids = set()
+else:
+    returned_site_ids = set(streamflow_df["monitoring_location_id"].dropna().unique())
+
+# Split locations into with-data and without-data groups
+locations_with_streamflow_df = location_df[
+    location_df["id"].isin(returned_site_ids)
+]
+
+locations_without_streamflow_df = location_df[
+    ~location_df["id"].isin(returned_site_ids)
+]
+
+# Locations that returned streamflow data
+locations_with_streamflow_df = location_df[
+    location_df["id"].isin(returned_site_ids)
+]
+
+
+# Locations that did not return streamflow data
+locations_without_streamflow_df = location_df[
+    ~location_df["id"].isin(returned_site_ids)
+]
+
+print("Requested sites:", len(requested_site_ids))
+print("Sites with streamflow data:", len(returned_site_ids))
+print("Sites without streamflow data:", len(locations_without_streamflow_df))
+
+streamflow_df.to_csv("USGS Daily Stream/data/streamflow.csv", index=False)
