@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs
+logs/
+*.log
+
+# Local data outputs
+data/raw/
+data/processed/
+*.db
+*.csv
+*.json
+
+# VS Code
+.vscode/
